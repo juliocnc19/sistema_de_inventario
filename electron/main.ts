@@ -1,8 +1,11 @@
 import { app, BrowserWindow } from 'electron'
 import { fileURLToPath } from 'node:url'
 import path from 'node:path'
+import squirreledStartup from 'electron-squirrel-startup';
 
-if(require("electron-squirred-startup")) app.quit()
+if (squirreledStartup) {
+    app.quit();
+}
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
